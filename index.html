@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/framework.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/responssive.css">
+    <title>Mario clicker</title>
+</head>
+<body>
+    <!-- fichiers audio -->
+    <audio id="yoshi_sound" src="asset/sound/Yoshi.wav" type="audio/wav" ></audio>
+    <audio id="jump_sound" src="asset/sound/saut.wav" type="audio/wav" ></audio>
+    <audio id="piece_sound" src="asset/sound/piece.wav" type="audio/wav" ></audio>
+    <audio id="next_level_sound" src="asset/sound/1-up.wav" type="audio/wav" ></audio>
+    <audio id="ahah_sound" src="asset/sound/Ah ah !.wav" type="audio/wav" ></audio>
+    <audio id="invincible" src="asset/sound/invincible mario.mp3" type="audio/mp3" ></audio>
+    <audio id="power_up" src="asset/sound/power-up.wav" type="audio/wav" ></audio>
+    <audio id="stars_dispo" src="asset/sound/Recharge.wav" type="audio/wav" ></audio>
+    <audio id="theme_sound"  src="asset/sound/thememario.mp3" autoplay loop type="audio/mp3" ></audio>
+    <audio id="voice_go_sound"  src="asset/sound/Here we go !.wav"  type="audio/mp3" ></audio>
+   
+    
+    <header id="header" class="flex around items_center fixed w1">
+        <img id="logo_clicker" src="asset/img/logoclicker.webp" alt="">
+        <div class="flex  ">
+            <div id="ctn_coint" class="flex items_center column">
+                <img id="coint" src="asset/img/star_coin.webp" alt="">
+                <span id="affichage" value= "0" class="color1">0</span>
+            </div>
+
+            <div id="ctn_nb_stars" class="flex items_center column">
+                <img id="stars" src="asset/img/stars.webp" alt="">
+                <span id="nb_autoclicker" class="color1"></span>
+            </div> 
+        </div>
+        <div id="ctn_niveau" class="flex items_center">
+            <span id="info_niveau" class="color5 bloc">niveau</span>
+            <span id="niveau" class="color1"></span>
+        </div>
+    </header>
+    <section id="menu_game" class="absolute flex items_center content_center relative hidden" >
+        <div class="center">
+            <img id="logo_menu" src="asset/img/logoclicker.webp" alt="">
+            <button id="play_game" class="color1 bgcolor2 letter_space ">Jouer</button>
+        </div>
+    </section>
+    <section id="game" class="center flex hidden">
+        <div class="first flex column ">
+            <p id="message_correct" class=" color3 letter_space relative"></p>
+            <div id="ctn_img" class=" bgcolor relative">
+                <img id="brique" class="margin_center relative" src="asset/img/brique.webp" alt="">
+            </div>
+            <div id="ctn_click" class="container relative">
+                <img id="click" onclick="piece()" class="absolute" src="asset/img/mario_jump.webp" alt=""> 
+            </div>
+        </div>
+        <aside class="relative ">
+            <div class="ctn_btn flex column evenly">
+                <div class="flex column_reverse ">
+                    <div class="flex column">
+                        
+                        <span id="info_multi" class="color1 bloc"></span>
+                        <span id="prix_multi" class="color1 bloc"></span>
+                    </div>
+                    <img  id="multi" src="asset/img/mario_yocshi.webp" class="disabled margin_center" alt="">
+                </div>
+                <div class="flex column_reverse ">
+                    <div class="flex column">
+                        <span id="info_autoclick" class="color1 bloc"></span>
+                        <span id="prix_autoclick" class="color1 bloc"></span>
+                    </div>
+                    <img id="autoclick" src="asset/img/stars.webp" class="disabled margin_center" alt="">
+                </div>
+                <div class="flex column_reverse ">
+
+                    <div class="flex column">
+                        <span id="info_bonus" class="color1 bloc"></span>
+                        <span id="prix_bonus" class="color1 bloc"></span>
+                    </div>
+                    <span id="time" class="color1 bloc"></span>
+                    <img id="bonus" src="asset/img/luigi.webp" class="disabled margin_center" alt="">
+                </div>
+                <span id="erreur_message"></span>
+                <label for="menu_setting" class="relative color1 "> <img src="asset/img/setting.webp" class="margin_center" alt="">reglage</label>
+                <input id="menu_setting" type="checkbox">
+                <div id="setting" class="absolute">
+                   <div>
+                      <label for="" class="color1">musique</label>
+                     <div class="flex items_center">    
+                        <img id="icone_master_musique" src="asset/img/master.webp" onclick="mutedmusic()" alt="">
+                        <input id="range_music"  type="range" name="master" min="0" max="100" value="">
+                     </div>
+                   </div>
+                   <div>
+                      <label for="" class="color1">sound</label>
+                     <div class="flex items_center">    
+                        <img id="icone_master_sound" src="asset/img/master.webp" onclick="mutedsound()" alt="">
+                        <input  id="range_sound" type="range" name="master" min="0" max="100" value="">
+                     </div>
+                   </div>
+                </div>
+            </div>
+        </aside>
+    </section>
+    <script src="asset/js/cookieclicker.js"></script>
+</body>
+</html>

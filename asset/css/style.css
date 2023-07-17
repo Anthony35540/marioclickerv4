@@ -1,0 +1,387 @@
+@font-face {
+    font-family: "mario";
+    src: local("mario"), url("../font/supermario256-webfont.woff");
+}
+body{
+  
+    background: url(../img/WiiU_SuperSmashBros_Stage07_Screen_0.webp) no-repeat center; 
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "mario", sans-serif;
+}
+.event_scale{
+    animation: scale 1s linear;
+}
+.disabled{
+    opacity: .5;
+    animation: none; 
+}
+.disponible{
+    animation: disponible 3s infinite linear;
+    opacity: 1 !important;
+}
+.disponible:hover{
+    animation: none;
+}
+.disponible:active{
+    transform: scale(.8);
+}
+.invincible{
+    animation: invincible .2s infinite;
+}
+input[type="range" i]{
+ margin: 0 10px;
+ -webkit-appearance: none; 
+  background: #00ff3374;             
+}
+/* ////////////////////////////////////////////////////////// */
+
+header{
+    padding: 15px 0;
+    background-color: rgba(128, 128, 128, 0.305);
+    z-index: 5;
+}
+#ctn_coint,#ctn_nb_stars{
+    margin-right: 30px;
+}
+#stars,#coint{
+    width: 60px;
+    padding-bottom: 20px;
+}
+#affichage,#nb_autoclicker,#info_niveau,#niveau,aside span{
+    font-size: 2rem;
+}
+#info_niveau{
+   padding-right: 20px;
+}
+#logo_clicker{
+    width: 110px;
+}
+.speedstars{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: url(../img/etoile.webp)no-repeat center center;
+    background-size: cover;
+    animation: etoilefilante 3s cubic-bezier(.53,0,0,.34);
+    opacity: 0;
+    z-index: -1;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+#menu_game{
+    height: 100vh;
+    width: 100%;
+     background:url(../img/bgmenugame.webp); 
+    background-attachment: fixed;
+    z-index: 8;
+    /* display: none;  */
+}
+#menu_game::before{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(../img/bgbefore.webp);
+    background-position: 1000% 289%;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    animation: stars_befor 5s linear infinite;
+}
+#menu_game::after{
+    content: "";
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: url(../img/bgbefore.webp);
+    background-position: -1000% -289%;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    animation: stars_befor 5s linear infinite;
+    animation-delay: 5s;
+    /* border: solid 1px rgb(225, 255, 0); */
+}
+#play_game{
+    font-family: inherit;
+    font-size: 2rem;
+    margin-top: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 0 5px  var(--color1);
+    transition: all .3s
+}
+#play_game:hover{
+    box-shadow: 0 0 0 5px  var(--color3);
+}
+#play_game:active{
+    transform: scale(.5);
+}
+#game{
+    height: 100vh ;
+    /* height: calc( 100vh - 17px); */
+} 
+#ctn_img {
+    padding-top: 25vh;
+}
+#ctn_img > img{
+    max-width: 150px;
+    z-index: 5;
+}
+.first{
+   flex-grow: 1;
+}
+
+#ctn_click{
+    position:relative;
+}
+#ctn_click>img{
+    left: 50%;
+    margin-left: -150px;
+    top: -5px;
+    z-index: 0; 
+    max-width: 200px;
+} 
+#message_correct{
+
+    top: 185px;
+} 
+/* ////////////////////////////////////////////////////////// */
+aside{
+    background-color: rgba(128, 128, 128, 0.305);
+    border-left: 1px solid grey;
+    height: calc(100vh - 140px);
+    padding: 0 3px;
+    top: 139px;
+    width: 116px;
+}
+aside span{
+    margin: 5px 0;
+    
+}
+aside>div>div>img{
+    padding-bottom: 10px;
+}
+.ctn_btn{
+    height: calc(100vh - 139px);
+} 
+#click:active{
+    transform: translateY(-15px);
+}
+#multi,#autoclick{
+    width: 60px;
+}
+#bonus{
+    width: 100px;
+}
+#setting{
+    width: 200px;
+    background-color:#808080d9;
+    opacity: 0;
+    bottom: 50px;
+    left: -201px;
+    transform: translateX(50%);
+    transition: all ease-in-out .3s;
+    z-index: -1;
+    padding: 10px;
+}
+#menu_setting:checked + #setting{
+     opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+ #setting #master{
+    margin-bottom: 0 ;
+}
+label>img{
+    width: 40%;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+
+.stars{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 2, 0.7);
+    background: url(../img/star_coin.webp)no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top:150%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 0;
+    opacity: 0;
+    animation: stars 3s  cubic-bezier(.01,.88,.51,.65);;
+    display: block;
+    padding: 5px; 
+    transform: translateX(80%x);
+}
+.piece{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(25, 0, 255, 0.7);
+    /* border-radius: 50%; */
+    background: url(../img/star_coin.webp) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    z-index: 1;
+    opacity: 0;
+    animation: translate_piece 1.5s cubic-bezier(.01,.88,.51,.65);
+    display: block;
+    padding: 5px;
+    transform: translateX(20px);
+}
+
+.head_luigi{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.7);
+    background: url(../img/teteluigi.webp) no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    z-index: 0;
+    opacity: 0;
+    animation: head_luigi 3s linear;
+    display: block;
+    padding: 5px;
+    transform: translateX(80px);
+}
+
+
+
+
+/* ////////////////////////////////////////////////////////// */
+
+
+
+@keyframes stars{
+    0%{
+        transform: translate(80px, 0) rotate3d(0, 1, 0, 0deg);
+        opacity: 1;
+        background: url(../img/stars.webp) no-repeat center;
+        background-size: cover;
+    }
+    50%{
+        transform: translate(100px, -500%);
+        background: url(../img/stars.webp) no-repeat center;
+        background-size: cover;
+    }
+    80%{
+        opacity: 1;
+    }
+    85%{
+        background: url(../img/star_coin.webp) no-repeat center;
+        background-size: cover;
+    }
+    100%{
+        transform: translate(-200%, -750%) rotate3d(0, 1, 0, 720deg);
+
+        display: none;
+    }
+}
+@keyframes translate_piece{
+    0%{
+        transform: translate(20px, 0) rotate3d(0, 1, 0, 720deg);
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+        transform: translate(20px, -300%);
+    }
+    100%{
+        transform: translate(20px, -500%);
+        display: none;
+    }
+}
+@keyframes head_luigi{
+
+
+    0%{
+        transform: translate(100px, 0);
+        opacity: 1;
+    }
+    100%{
+        transform: translate(10px, -800%);
+        display: none;
+    }
+    
+}
+@keyframes disponible{
+
+    0%{
+       transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+@keyframes scale{
+
+
+    0%{
+       transform: scale(1);
+    }
+    50%{
+        transform: scale(3);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+@keyframes invincible {
+    0% {
+        
+        filter: none;
+      
+    }
+    100% {
+        
+        filter: drop-shadow(16px 16px 20px  rgb(255, 255, 0))blur();
+    }
+}
+@keyframes stars_befor {
+    0% {
+        
+        opacity: 0;
+      
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes etoilefilante {
+    0% {
+        opacity: 0;
+        transform: translate(0);
+      
+    }
+    100% {
+        transform: translate(-2000px, 500px);
+        opacity: 1;
+    }
+}

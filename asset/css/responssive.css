@@ -1,0 +1,141 @@
+/* TABLETTE */
+@media screen and (max-width:979px){
+
+}
+
+
+
+/* MOBILE */
+@media screen and (max-width:767px){
+
+    /* header div:nth-child(2){
+        flex-direction: column;
+    } */
+    
+
+    #ctn_niveau{
+        flex-direction: column;
+    }
+    #ctn_nb_stars{
+        margin-left: 20px;
+    }
+    #ctn_coint,#ctn_nb_stars{
+
+        margin-right: 0;
+    }
+    #info_niveau {
+        padding-right:0
+    }
+    #ctn_img > img {
+        max-width: 100px;
+    
+    }
+    #brique{
+        top: 160px;
+    }
+    #ctn_click>img {
+        left: 50%;
+        margin-left: -90px;
+        top: 170px;
+        z-index: 0;
+        max-width: 130px;
+    }
+    .ctn_btn {
+        height: calc(100vh - 141px);
+        /* background: aliceblue; */
+    }
+    aside {
+        background-color: rgba(128, 128, 128, 0.305);
+        border-left: 1px solid grey;
+        height: calc(100vh - 141px);
+        padding: 0 3px;
+        top: 140px;
+    }
+    .piece {
+        top: 100%;
+    }
+    aside span {
+        font-size: 1.2rem;
+    }
+
+
+
+    @keyframes stars{
+        0%{
+            transform: translate(80px, 0) rotate3d(0, 1, 0, 0deg);
+            opacity: 1;
+            background: url(../img/stars.png) no-repeat center;
+            background-size: cover;
+        }
+        50%{
+            transform: translate(100px, -500%);
+            background: url(../img/stars.png) no-repeat center;
+            background-size: cover;
+        }
+        80%{
+            
+            opacity: 1;
+            
+        }
+        85%{
+            background: url(../img/star_coin.webp) no-repeat center;
+            background-size: cover;
+    
+        }
+        100%{
+            transform: translate(-50%, -750%) rotate3d(0, 1, 0, 720deg);
+    
+            display: none;
+        }
+    }
+
+    .head_luigi{
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 0, 0, 0.7);
+        background: url(../img/teteluigi.png) no-repeat center;
+        background-size: cover;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+        margin-left: -100px;
+        z-index: 1;
+        opacity: 0;
+        animation: head_luigi 3s linear;
+        display: block;
+        padding: 5px;
+        transform: translateX(80px);
+    }
+    
+  
+}
+@media screen and (max-width:600px){
+    aside {
+        background-color: rgba(128, 128, 128, 0.305);
+        border-left: 1px solid grey;
+        height: calc(100vh - 104px);
+        padding: 0 3px;
+        top: 103px;
+    }
+
+    #stars, #coint {
+        width: 30px;
+    }
+    #logo_clicker {
+        width: 50px;
+    }
+   
+    #affichage, #nb_autoclicker, #info_niveau, #niveau {
+        font-size: 1.5rem;
+    }
+    #message_correct{
+        
+        font-size: 1rem;
+    }
+        
+  
+}
+
+
+
